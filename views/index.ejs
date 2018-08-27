@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Raspberry Pi Web IoT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS Start -->
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-toggle.min.css">
+  <link rel="stylesheet" href="stylesheets/all.css">
+  <!-- CSS End -->
+  <!-- JS Start -->
+  <script src="javascripts/jquery.min.js"></script>
+  <script src="javascripts/popper.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <script src="javascripts/bootstrap-toggle.min.js"></script>
+  <script src="javascripts/client.js"></script>
+  <!-- Bootstrap Tooltip and Modal -->
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+      $("#shutBtn").click(function () {
+        $("#shutdown").modal('show');
+      });
+
+      $("#restartBtn").click(function () {
+        $("#restart").modal('show');
+      });
+    });
+  </script>
+  <!-- JS End -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Raspberry Pi Web IoT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="#" id="shutBtn" class="btn  fas fa-power-off fa-2x" data-toggle="tooltip" data-toggle="modal" data-placement="bottom"
+          title="關機" data-target="#exampleModalCenter"></a>
+        <a href="#" id="restartBtn" class="btn  fas fa-circle-notch fa-2x" data-toggle="tooltip" data-placement="bottom" title="重新啟動"></a>
+      </form>
+    </div>
+  </nav>
+  <!-- Shutdown Start -->
+  <div class="modal fade" id="shutdown" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">關機確認</h5>
+        </div>
+        <div class="modal-body">
+          您是否要關閉系統？
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" class="close" data-dismiss="modal" aria-label="Cancel">取消</button>
+          <button type="button" class="btn btn-danger" id="wantShut">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Shutdown End -->
+  <!-- Restart Start -->
+  <div class="modal fade" id="restart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">重新啟動確認</h5>
+        </div>
+        <div class="modal-body">
+          您是否要重新啟動系統？
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" class="close" data-dismiss="modal" aria-label="Cancel">取消</button>
+          <button type="button" class="btn btn-danger" id="wantRestart">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Restart End -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Switch -->
+      <div class="col-12 col-sm-6">
+        <div class="row">
+          <!-- Switch -->
+          <div class="col-12 col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-header">
+                GPIO 開關 / GPIO Switch
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 5
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="5" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 6
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="6" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 12
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="12" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 13
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="13" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 16
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="16" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 17
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="17" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 18
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="18" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 19
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="19" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 20
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="20" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 21
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="21" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 22
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="22" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 23
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="23" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 24
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="24" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 25
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="25" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 26
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="26" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 27
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="27" class="gpio-checkbox"
+                  />
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <!-- Left I²C SPI URT-->
+          <div class="col-12 col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-header">
+                GPIO I²C SPI URT
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 2 / SDA1
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="2" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 3 / SCL1
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="3" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 4 / GCLK
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="4" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 7 / CE1#
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="7" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 8 / CE0#
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="8" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 9 / MOSI
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="9" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 10 / MISO
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="10" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 11 / SCLK
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="11" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 14 / TXD0
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="14" class="gpio-checkbox"
+                  />
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  GPIO 15 / RXD0
+                  <input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="15" class="gpio-checkbox"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sensor -->
+      <div class="col-12 col-sm-6">
+        <div class="row">
+          <div class="col">
+            <canvas id="dht11" width="100%" height="100%"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="javascripts/socket.io.js"></script>
+  <script src="javascripts/Chart.min.js"></script>
+  <script src="javascripts/dht11-chart.js"></script>
+  <script src="javascripts/dht11-socket.js"></script>
+</body>
+
+</html>
