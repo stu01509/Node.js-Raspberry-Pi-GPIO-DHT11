@@ -1,13 +1,24 @@
 {
-  "name": "piiot",
+  "name": "node.js-raspberry-pi-gpio-dht11",
   "version": "1.0.0",
-  "description": "",
+  "description": "Raspberry Pi GPIO Control and DHT11 Sensor Temperature Humid Web GUI ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js"
   },
-  "author": "",
+  "author": "stu01509",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stu01509/Node.js-Raspberry-Pi-GPIO-DHT11.git"
+  },
+  "keywords": [
+    "raspberry pi",
+    "socket-io",
+    "dht11",
+    "gpio",
+    "chartjs"
+  ],
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
