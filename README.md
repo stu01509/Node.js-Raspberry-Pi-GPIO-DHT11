@@ -15,13 +15,18 @@ Based on Node.js.
 
 ## Features
 
-* 
-*
-*
-*
+  * 🔘 Raspberry Pi GPIO control.
+  * 🌡️ DHT11 sensor read temperature and humid.
+  * 🔄 Raspberry Pi system shutdown and restart mangement.
+  * 🌐 Web GUI dashboard, Real time data.
+  * 📱 RWD Design.
 
 ## Requirement
-
+  
+  * [Node.js](https://nodejs.org/en/) version 6.0.0 or higher.
+  * [NPM](https://www.npmjs.com/) version 5.6.0 or higher.
+  * [C library for Broadcom BCM 2835](http://www.airspayce.com/mikem/bcm2835/)
+  
 ## Setting
 
 ## Usage
