@@ -1,5 +1,3 @@
-// 'use strict'
-
 // Loading Modules
 const rpio = require('rpio');
 const shell = require('shelljs');
@@ -9,9 +7,7 @@ exports.index = (req, res) => {
 };
 
 exports.ajax = (req, res) => {
-  // if (req.body.hasOwnProperty('action')) {
-
-  // }
+  // GPIO Control
   switch (req.body.action) {
     case 'write':
       rpio.init({
@@ -32,6 +28,7 @@ exports.ajax = (req, res) => {
 };
 
 exports.control = (req, res) => {
+  // System ShutDown and Restart
   const controlStatus = req.body.action;
   const controlId = Number(controlStatus);
   if (controlId === 0) {

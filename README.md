@@ -9,6 +9,25 @@
 
 ## Node.js-Raspberry-Pi-GPIO-DHT11
 
+Raspberry Pi gpio control and DHT11 temperature humid sensor Web GUI system,
+Real time temperature and humid data by socket, Using Chart.js to show real time data,
+Based on Node.js.
 
-## Lisense
+## Features
+
+* 
+*
+*
+*
+
+## Requirement
+
+## Setting
+
+## Usage
+
+## Demo
+
+## License
+
 MIT

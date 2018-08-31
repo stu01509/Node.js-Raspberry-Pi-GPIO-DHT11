@@ -6,7 +6,7 @@ const rpiDhtSensor = require('rpi-dht-sensor');
 
 //  Express Setting
 const app = express();
-const port = '80';
+const port = '8080';
 app.set('view engine', 'ejs');
 const routes = require('./routes');
 
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 //  Loading JS CSS Plugins
-//  app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname.concat('/public')));
 
 //  Express Route
@@ -45,4 +45,3 @@ servIo.sockets.on('connection', (socket) => {
     });
   }, 3000);
 });
-
