@@ -68,19 +68,34 @@ When you complete the installation and upgrade software, You have to restart the
 ## Requirement Parts & Cablage
 
 1. DHT11 Sensor.
-2. 10K Resistor.
-3. GPIO Cable.
-4. LED.
+2. 4.7kΩ Resistor.
+3. 220Ω Resistor.
+4. GPIO Cable.
+5. LED.
 
 |Sensor |Pin    |Raspberry Pi Pin|
 |-------|-------|-------------:|
 |DHT11  |VCC    |5V            |
 |       |GND    |GND           |
-|       |Data   |D4            |
+|       |Data   |GPIO0         |
 
-
+<img width="600" src="https://i.imgur.com/2ZH0AQT.png">
 
 ## Usage
+
+```Shell
+$ git clone git@github.com:stu01509/Node.js-Raspberry-Pi-GPIO-DHT11.git
+$ cd Node.js-Raspberry-Pi-GPIO-DHT11
+$ npm install 
+
+```
+
+In project directory using node index.js, The app will listen on 3000 port, Running in RaspberryPiIP:3000
+```Shell
+$ sudo node index.js
+
+```
+<img width="600" src="https://i.imgur.com/sJTCEnZ.gif">
 
 ## Demo
 
