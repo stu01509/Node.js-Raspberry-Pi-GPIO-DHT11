@@ -6,7 +6,7 @@ const rpiDhtSensor = require('rpi-dht-sensor');
 
 //  Express Setting
 const app = express();
-const port = '8080';
+const port = '3000';
 app.set('view engine', 'ejs');
 const routes = require('./routes');
 
