@@ -1,5 +1,5 @@
-  <p align=center>
-<img src="">
+<p align=center>
+<img src="https://i.imgur.com/KuExNfQ.png">
 </p>
 
 
@@ -98,6 +98,13 @@ $ sudo node index.js
 <img width="600" src="https://i.imgur.com/sJTCEnZ.gif">
 
 ## Demo
+
+#### System ShutDown & Restat
+
+#### DHT11 Sensor Real time Data Chart
+
+#### GPIO Control
+
 
 ## License
 
