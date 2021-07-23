@@ -100,11 +100,9 @@ $ sudo node index.js
 ## Demo
 
 #### System ShutDown & Restat
-<iframe width="1400" height="550" src="https://www.youtube.com/embed/WXz5ggWBpFc" frameborder="0" allowfullscreen></iframe>
-#### DHT11 Sensor Real time Data Chart
 
 #### GPIO Control
-
+[<img src="https://i.imgur.com/shHPrK7.png">](https://www.youtube.com/watch?v=-B_dwTdsQmA)
 
 ## License
 
