@@ -25,7 +25,7 @@
     "express": "^4.16.3",
     "rpi-dht-sensor": "^0.1.1",
     "rpio": "^0.9.12",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.5",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
