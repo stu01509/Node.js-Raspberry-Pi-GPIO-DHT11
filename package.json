@@ -20,9 +20,9 @@
     "chartjs"
   ],
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.18.2",
     "rpi-dht-sensor": "^0.1.1",
     "rpio": "^0.9.12",
     "shelljs": "^0.8.2",
